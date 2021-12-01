@@ -1,0 +1,29 @@
+{
+    "SmartAgent": {
+        "checkpoints": [
+            {
+                "steps": 320057,
+                "file_path": "results/25/SmartAgent/SmartAgent-320057.onnx",
+                "reward": -100.0,
+                "creation_time": 1637874308.707492,
+                "auxillary_file_paths": [
+                    "results/25/SmartAgent/SmartAgent-320057.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 320057,
+            "file_path": "results/25/SmartAgent.onnx",
+            "reward": -100.0,
+            "creation_time": 1637874308.707492,
+            "auxillary_file_paths": [
+                "results/25/SmartAgent/SmartAgent-320057.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.8.1"
+    }
+}

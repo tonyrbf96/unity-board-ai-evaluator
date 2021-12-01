@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1637880398",
+        "python_version": "3.8.8 (default, Apr 13 2021, 12:59:45) \n[Clang 10.0.0 ]",
+        "command_line_arguments": "/Users/tony/python-envs/unityml-env/bin/mlagents-learn config/SmartAgent.yaml --run-id 27",
+        "mlagents_version": "0.27.0",
+        "mlagents_envs_version": "0.27.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.8.1",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1637880410"
+    },
+    "total": 12.513387868,
+    "count": 1,
+    "self": 0.011790647999999848,
+    "children": {
+        "run_training.setup": {
+            "total": 0.05356982900000018,
+            "count": 1,
+            "self": 0.05356982900000018
+        },
+        "TrainerController.start_learning": {
+            "total": 12.448027391,
+            "count": 1,
+            "self": 0.0008181900000021614,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 12.44718661,
+                    "count": 1,
+                    "self": 12.44718661
+                },
+                "trainer_threads": {
+                    "total": 2.696999999329819e-06,
+                    "count": 1,
+                    "self": 2.696999999329819e-06
+                },
+                "TrainerController._save_models": {
+                    "total": 1.989399999935415e-05,
+                    "count": 1,
+                    "self": 1.989399999935415e-05
+                }
+            }
+        }
+    }
+}
