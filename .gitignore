@@ -17,6 +17,10 @@ Assets/Specifications/Resources
 # addresables
 *addressables_content_state.bin
 
+# python
+python-envs/*
+
+
 # file on crash reports
 sysinfo.txt
 
