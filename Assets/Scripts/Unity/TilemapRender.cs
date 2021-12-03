@@ -23,6 +23,13 @@ public class TilemapRender : MonoBehaviour, IBoardDrawer
 
     public TileColorPair[] colorsPerTile;
 
+
+    
+    private void Register() {
+
+
+    }
+
     private void Awake()
     {
         tilemap = GetComponent<Tilemap>();

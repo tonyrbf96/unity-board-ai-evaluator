@@ -36,7 +36,7 @@ namespace InteligenceEngine
         /// </summary>
         /// <param name="inputs"></param>
         /// <returns></returns>
-        public abstract int Play(bool[] inputs);
+        public abstract void Play(bool[] inputs);
         /// <summary>
         /// Get the [GameBoardState] of the current game.
         /// </summary>

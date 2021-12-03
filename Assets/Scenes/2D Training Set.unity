@@ -133,9 +133,10 @@ GameObject:
   m_Component:
   - component: {fileID: 148201861}
   - component: {fileID: 148201860}
-  - component: {fileID: 148201859}
-  - component: {fileID: 148201858}
+  - component: {fileID: 148201862}
   - component: {fileID: 148201857}
+  - component: {fileID: 148201858}
+  - component: {fileID: 148201859}
   m_Layer: 0
   m_Name: Agent (8)
   m_TagString: Untagged
@@ -166,14 +167,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 148201856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 8
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &148201859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,13 +183,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 148201856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: dd8012d5925524537b27131fef517017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 300
+  m_SensorName: BufferSensor
+  m_ObservableSize: 3
+  m_MaxNumObservables: 100
 --- !u!114 &148201860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -215,7 +214,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Buffer
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -227,13 +226,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148201856}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &148201862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148201856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d552e0d6c1c4ba8b29dd5ab3fd4469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 300
 --- !u!1 &181503378
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +261,7 @@ GameObject:
   - component: {fileID: 181503379}
   - component: {fileID: 181503382}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: 'Grid Drawer '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,14 +375,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 256766407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &256766410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +391,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 256766407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: ff44d135b5d5741fa87c97fadbe6f62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
@@ -398,7 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -409,7 +423,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Dummy
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -421,12 +435,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256766407}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &322700014
 GameObject:
@@ -438,9 +452,10 @@ GameObject:
   m_Component:
   - component: {fileID: 322700019}
   - component: {fileID: 322700018}
-  - component: {fileID: 322700017}
-  - component: {fileID: 322700016}
+  - component: {fileID: 322700020}
   - component: {fileID: 322700015}
+  - component: {fileID: 322700016}
+  - component: {fileID: 322700017}
   m_Layer: 0
   m_Name: Agent (7)
   m_TagString: Untagged
@@ -471,14 +486,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 322700014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 7
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &322700017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,13 +502,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 322700014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: dd8012d5925524537b27131fef517017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 300
+  m_SensorName: BufferSensor
+  m_ObservableSize: 3
+  m_MaxNumObservables: 100
 --- !u!114 &322700018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,7 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -520,7 +533,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Buffer
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -532,13 +545,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322700014}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322700020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322700014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d552e0d6c1c4ba8b29dd5ab3fd4469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 300
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +651,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &613560095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 613560096}
+  m_Layer: 0
+  m_Name: Agents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &613560096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613560095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1622747483}
+  - {fileID: 1653875947}
+  - {fileID: 256766412}
+  - {fileID: 1210311645}
+  - {fileID: 1912025373}
+  - {fileID: 1663023758}
+  - {fileID: 1110606973}
+  - {fileID: 322700019}
+  - {fileID: 148201861}
+  - {fileID: 1644734029}
+  - {fileID: 1267177512}
+  - {fileID: 1607549285}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1110606968
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,9 +703,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1110606973}
   - component: {fileID: 1110606972}
-  - component: {fileID: 1110606971}
-  - component: {fileID: 1110606970}
+  - component: {fileID: 1110606974}
   - component: {fileID: 1110606969}
+  - component: {fileID: 1110606970}
+  - component: {fileID: 1110606971}
   m_Layer: 0
   m_Name: Agent (6)
   m_TagString: Untagged
@@ -665,14 +737,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1110606968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 6
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &1110606971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,13 +753,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1110606968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: dd8012d5925524537b27131fef517017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 300
+  m_SensorName: BufferSensor
+  m_ObservableSize: 3
+  m_MaxNumObservables: 100
 --- !u!114 &1110606972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,7 +773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -714,7 +784,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Buffer
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -726,13 +796,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110606968}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1110606974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110606968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d552e0d6c1c4ba8b29dd5ab3fd4469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 300
 --- !u!1 &1117050880
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,14 +1007,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1210311640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &1210311643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,7 +1023,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1210311640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: ff44d135b5d5741fa87c97fadbe6f62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
@@ -959,7 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -970,7 +1055,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Dummy
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -982,12 +1067,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210311640}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1267177507
 GameObject:
@@ -999,9 +1084,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1267177512}
   - component: {fileID: 1267177511}
-  - component: {fileID: 1267177510}
-  - component: {fileID: 1267177509}
+  - component: {fileID: 1267177513}
   - component: {fileID: 1267177508}
+  - component: {fileID: 1267177509}
+  - component: {fileID: 1267177510}
   m_Layer: 0
   m_Name: Agent (10)
   m_TagString: Untagged
@@ -1032,14 +1118,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1267177507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 10
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &1267177510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1049,13 +1134,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1267177507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: dd8012d5925524537b27131fef517017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 300
+  m_SensorName: BufferSensor
+  m_ObservableSize: 3
+  m_MaxNumObservables: 100
 --- !u!114 &1267177511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,7 +1154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -1081,7 +1165,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Buffer
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -1093,13 +1177,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267177507}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1267177513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267177507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d552e0d6c1c4ba8b29dd5ab3fd4469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 300
 --- !u!1 &1607549280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,9 +1210,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1607549285}
   - component: {fileID: 1607549284}
-  - component: {fileID: 1607549283}
-  - component: {fileID: 1607549282}
+  - component: {fileID: 1607549286}
   - component: {fileID: 1607549281}
+  - component: {fileID: 1607549282}
+  - component: {fileID: 1607549283}
   m_Layer: 0
   m_Name: Agent (11)
   m_TagString: Untagged
@@ -1143,14 +1244,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607549280}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 11
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &1607549283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1160,13 +1260,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607549280}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: dd8012d5925524537b27131fef517017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 300
+  m_SensorName: BufferSensor
+  m_ObservableSize: 3
+  m_MaxNumObservables: 100
 --- !u!114 &1607549284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,7 +1280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -1192,7 +1291,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Buffer
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -1204,13 +1303,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607549280}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607549286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607549280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d552e0d6c1c4ba8b29dd5ab3fd4469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 300
 --- !u!1 &1622747482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,12 +1353,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622747482}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1622747484
 MonoBehaviour:
@@ -1254,7 +1369,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1622747482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: ff44d135b5d5741fa87c97fadbe6f62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
@@ -1275,7 +1390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -1286,7 +1401,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Dummy
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -1300,14 +1415,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1622747482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &1622747487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,9 +1446,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1644734029}
   - component: {fileID: 1644734028}
-  - component: {fileID: 1644734027}
-  - component: {fileID: 1644734026}
+  - component: {fileID: 1644734030}
   - component: {fileID: 1644734025}
+  - component: {fileID: 1644734026}
+  - component: {fileID: 1644734027}
   m_Layer: 0
   m_Name: Agent (9)
   m_TagString: Untagged
@@ -1365,14 +1480,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1644734024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 9
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &1644734027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,13 +1496,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1644734024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: dd8012d5925524537b27131fef517017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 300
+  m_SensorName: BufferSensor
+  m_ObservableSize: 3
+  m_MaxNumObservables: 100
 --- !u!114 &1644734028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1403,7 +1516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -1414,7 +1527,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Buffer
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -1426,13 +1539,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644734024}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1644734030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644734024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d552e0d6c1c4ba8b29dd5ab3fd4469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 300
 --- !u!1 &1653875942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,14 +1605,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1653875942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &1653875945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1493,7 +1621,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1653875942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: ff44d135b5d5741fa87c97fadbe6f62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
@@ -1514,7 +1642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -1525,7 +1653,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Dummy
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -1537,12 +1665,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653875942}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1663023753
 GameObject:
@@ -1587,14 +1715,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1663023753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 5
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &1663023756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,7 +1731,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1663023753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: ff44d135b5d5741fa87c97fadbe6f62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
@@ -1625,7 +1752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -1636,7 +1763,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Dummy
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -1648,42 +1775,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663023753}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1707658047
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1707658048}
-  m_Layer: 0
-  m_Name: Engine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1707658048
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707658047}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1924663, y: -0.114217654, z: -1.0976638}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1912025368
 GameObject:
@@ -1728,14 +1825,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1912025368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b03de9ee1264411bb54a2169b30640c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8687a622f990842679980b2bd6efd364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 4
-  width: 10
-  height: 10
   enableRendering: 1
   gameName: Snake
+  lastPoints: 0
 --- !u!114 &1912025371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1745,7 +1841,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1912025368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c162bbb2f8f404f6fba5f42e0730ac80, type: 3}
+  m_Script: {fileID: 11500000, guid: ff44d135b5d5741fa87c97fadbe6f62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
@@ -1766,7 +1862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 225
-    NumStackedVectorObservations: 10
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 04000000
@@ -1777,7 +1873,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: SmartAgent
+  m_BehaviorName: Dummy
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -1789,10 +1885,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912025368}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.28716558, y: -0.16727003, z: -148.07823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 613560096}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

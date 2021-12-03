@@ -64,7 +64,7 @@ public class Snake : Game
 
 
 
-    public override int Play(bool[] inputs)
+    public override void Play(bool[] inputs)
     {
         tail.Add(head);
 
@@ -85,7 +85,7 @@ public class Snake : Game
             if (i == head)
             {
                 state = State.Lose;
-                return 0;
+               
             }
         }
 
@@ -102,11 +102,9 @@ public class Snake : Game
                 if (targets.Count == 0)
                     state = State.Win;
 
-                return 1;
+                points++;
             }
         }
-
-        return 0;
     }
 
 

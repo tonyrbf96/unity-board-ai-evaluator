@@ -35,39 +35,27 @@ public class DummyAgent : BaseAgent
         controller.DrawGame();
     }
 
-    public override void OnActionReceived(ActionBuffers actions)
+    public override void AddRewards()
     {
-        var _actions = new bool[Game.actions];
-        _actions[actions.DiscreteActions.Array[0]] = true;
-
-        var points = controller.UpdateGame(_actions);
-
         AddReward(-1);
 
         var gameState = controller.state;
 
-        if (points > 0)
+        if (controller.lastPoints > 0)
         {
-            AddReward(  10 * points);
+            AddReward(  10 * controller.lastPoints);
         }
 
         if (gameState == Game.State.Win)
         {
             AddReward(40);
-            EndEpisode();
-
-            Debug.Log($"Win { ++winCounter}! {controller.points} points ");
         }
 
         if (gameState == Game.State.Lose)
         {
             AddReward(-20);
-            EndEpisode();
-            Debug.Log("Lose!");
         }
     }
 
-
-    public static int winCounter = 0;
 
 }

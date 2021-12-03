@@ -32,15 +32,18 @@ public sealed class GameController : MonoBehaviour
         drawer.DrawBoard(game.GetBoardForDebug(), id);
     }
 
-    public int UpdateGame(bool[] actions)
+    public int lastPoints;
+    public void UpdateGame(bool[] actions)
     {
         Debug.Assert(state != Game.State.Idle, $"The game is already finished, please call {nameof(GameController)}.{nameof(RestartGame)} before continue.", this);
         Debug.Assert(actions.Length == 4, $"The array \"{nameof(actions)}\" size is distint of 4", this);
 
-        var result = game.Play(actions);
-        board = game.GetBoard();
 
-        return result;
+        game.Play(actions);
+
+        lastPoints = game.points - lastPoints;
+
+        board = game.GetBoard();
     }
 
 

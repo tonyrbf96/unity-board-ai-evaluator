@@ -54,7 +54,7 @@ public class PositionToTargets : Game
 
 
 
-    public override int Play(bool[] inputs)
+    public override void Play(bool[] inputs)
     {
         player.Item2 += (inputs[0] ? 1 : 0) + (inputs[2] ? -1 : 0);
         player.Item1 += (inputs[1] ? 1 : 0) + (inputs[3] ? -1 : 0);
@@ -76,11 +76,9 @@ public class PositionToTargets : Game
                 if (targets.Count == 0)
                     state = State.Win;
 
-                return 1;
+                points++;
             }
         }
-
-        return 0;
     }
 
 
