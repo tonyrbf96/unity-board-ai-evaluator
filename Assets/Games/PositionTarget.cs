@@ -10,7 +10,6 @@ public class PositionToTargets : Game
 {
     public static new string description = "Move the player to the marked target";
 
-
     (int, int) player;
 
     List<(int, int)> playerMoves = new List<(int, int)>();
@@ -23,15 +22,12 @@ public class PositionToTargets : Game
 
     public PositionToTargets() : base()
     {
-       
-
         for (int i = 0; i < maxTargets; i++)
         {
            targets.Add(GameUtils.GetRandomPosition());
         }
 
         player = GameUtils.GetRandomPosition();
-
     }
 
 
@@ -51,7 +47,6 @@ public class PositionToTargets : Game
         {
             board[target.Item1, target.Item2] = (int)TileType.target;
         }
-
 
         return board;
     }

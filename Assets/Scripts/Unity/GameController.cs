@@ -4,29 +4,25 @@ using UnityEngine;
 using System.Linq;
 using InteligenceEngine;
 
-public class EngineController : MonoBehaviour
+public sealed class GameController : MonoBehaviour
 {
     public int id;
-    public int width, height = 20;
+
     IBoardDrawer drawer;
     public bool enableRendering;
 
     [GameTypeDrowdown]
     public string gameName;
 
-    private Type gameType;
 
     private void Awake()
     {
-        drawer = FindObjectOfType<TilemapRender>();
-
-        // Get the correct gameType from all posibles games
-
+        drawer = Dependencies.Get<IBoardDrawer>();
     }
 
     public void RestartGame()
     {
-        game = GetGame();
+        game = CreateGame();
         board = game.GetBoard();
     }
 
@@ -38,29 +34,28 @@ public class EngineController : MonoBehaviour
 
     public int UpdateGame(bool[] actions)
     {
+        Debug.Assert(state != Game.State.Idle, $"The game is already finished, please call {nameof(GameController)}.{nameof(RestartGame)} before continue.", this);
+        Debug.Assert(actions.Length == 4, $"The array \"{nameof(actions)}\" size is distint of 4", this);
+
         var result = game.Play(actions);
         board = game.GetBoard();
 
         return result;
     }
 
+
+
     public GameBoardState board { get; private set; }
+    public Game.State state => game.state;
+    public int points => game.points;
 
+    private Game game;
 
-    public Game game { get; private set; }
-
-
-    public Game GetGame()
+    private Game CreateGame()
     {
         // Create a instance of the game
-        if (gameType == null)
-        {
+        var gameType = AppDomain.CurrentDomain.GetAllDerivedTypes<Game>().First(t => t.Name == gameName);
 
-            Debug.Log(gameName);
-
-            gameType = AppDomain.CurrentDomain.GetAllDerivedTypes<Game>().First(t => t.Name == gameName);
-
-        }
         return Activator.CreateInstance(gameType) as Game;
     }
 
