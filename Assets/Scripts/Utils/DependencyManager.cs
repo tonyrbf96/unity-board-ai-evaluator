@@ -5,18 +5,18 @@ using UnityEngine;
 
 public static class Dependencies
 {
-    static Dictionary<string, object> dependencies = new Dictionary<string, object>();
+    static Dictionary<string, Func< object>> dependencies = new Dictionary<string, Func<object>>();
 
 
-    public static void RegisterSingleton<T>(string key, T value)
+    public static void RegisterSingleton<T>( Func<object> generator)
     {
-        dependencies.Add(typeof(T).FullName, value);
+        dependencies.Add(typeof(T).FullName, generator);
     }
 
     public static T Get<T>()
     {
         if (dependencies.ContainsKey(typeof(T).FullName))
-            return (T)dependencies[typeof(T).FullName];
+            return (T) dependencies[typeof(T).FullName]?.Invoke();
         else
             return default(T);
     }

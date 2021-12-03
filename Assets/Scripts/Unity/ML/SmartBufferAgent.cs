@@ -10,6 +10,11 @@ public class SmartBufferAgent : BaseAgent
     BufferSensorComponent bufferSensor;
 
 
+    private void Awake()
+    {
+        bufferSensor = GetComponent<BufferSensorComponent>();
+    }
+
 
     public override void CollectObservations(VectorSensor sensor)
     {

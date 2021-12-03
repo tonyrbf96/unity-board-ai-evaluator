@@ -8,7 +8,7 @@ public sealed class GameController : MonoBehaviour
 {
     public int id;
 
-    IBoardDrawer drawer;
+    BoardDrawer drawer;
     public bool enableRendering;
 
     [GameTypeDrowdown]
@@ -17,7 +17,7 @@ public sealed class GameController : MonoBehaviour
 
     private void Awake()
     {
-        drawer = Dependencies.Get<IBoardDrawer>();
+        drawer = FindObjectOfType<BoardDrawer>();
     }
 
     public void RestartGame()
@@ -29,13 +29,14 @@ public sealed class GameController : MonoBehaviour
     public void DrawGame()
     {
         if (!enableRendering) return;
-        drawer.DrawBoard(game.GetBoardForDebug(), id);
+        var board = game.GetBoardForDebug();
+        drawer.DrawBoard(board, id);
     }
 
     public int lastPoints;
     public void UpdateGame(bool[] actions)
     {
-        Debug.Assert(state != Game.State.Idle, $"The game is already finished, please call {nameof(GameController)}.{nameof(RestartGame)} before continue.", this);
+        Debug.Assert(state == Game.State.Idle, $"The game is already finished, please call {nameof(GameController)}.{nameof(RestartGame)} before continue.", this);
         Debug.Assert(actions.Length == 4, $"The array \"{nameof(actions)}\" size is distint of 4", this);
 
 

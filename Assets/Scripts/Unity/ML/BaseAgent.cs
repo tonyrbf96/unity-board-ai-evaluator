@@ -13,7 +13,7 @@ public abstract class BaseAgent : Agent
     protected GameController controller {
         get {
             if (!_controller)
-                GetComponent<GameController>();
+                _controller = GetComponent<GameController>();
             return _controller;
         }
     }
@@ -25,6 +25,8 @@ public abstract class BaseAgent : Agent
     public override void OnEpisodeBegin()
     {
         controller.RestartGame();
+
+        controller.DrawGame();
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -32,7 +34,9 @@ public abstract class BaseAgent : Agent
         var _actions = new bool[Game.actions];
         _actions[actions.DiscreteActions.Array[0]] = true;
 
-        _controller.UpdateGame(_actions);
+        controller.UpdateGame(_actions);
+
+        controller.DrawGame();
 
         AddRewards();
 

@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 using InteligenceEngine;
 
 [RequireComponent(typeof(Tilemap))]
-public class TilemapRender : MonoBehaviour, IBoardDrawer
+public class TilemapRender : BoardDrawer
 {
     public int gridSize = 3;
 
@@ -23,27 +23,19 @@ public class TilemapRender : MonoBehaviour, IBoardDrawer
 
     public TileColorPair[] colorsPerTile;
 
-
-    
-    private void Register() {
-
-
-    }
-
     private void Awake()
     {
         tilemap = GetComponent<Tilemap>();
         grid = GetComponentInParent<Grid>();
     }
 
+
     public void ResetTilemap()
     {
-
-
-
+        tilemap.ClearAllTiles();
     }
 
-    public void DrawBoard(GameBoardState board, int index)
+    public override void DrawBoard(GameBoardState board, int index)
     {
 
         for (int h = 0; h < board.height; h++)
@@ -57,7 +49,6 @@ public class TilemapRender : MonoBehaviour, IBoardDrawer
                 tilemap.RefreshTile(pos);
             }
         }
-
         //var size =  Mathf.Max(board.width, board.height);
         //tilemap.transform.localPosition = new Vector3(-board.width / 2 , -board.height / 2 );
     }
@@ -66,8 +57,8 @@ public class TilemapRender : MonoBehaviour, IBoardDrawer
 }
 
 
-public interface IBoardDrawer
+public abstract class BoardDrawer: MonoBehaviour
 {
-    void DrawBoard(GameBoardState board, int index);
+   public abstract void DrawBoard(GameBoardState board, int index);
 }
 

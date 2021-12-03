@@ -31,8 +31,6 @@ public class DummyAgent : BaseAgent
                 sensor.AddObservation(new Vector3Int(x, y, controller.board[x, y]));
             }
         }
-
-        controller.DrawGame();
     }
 
     public override void AddRewards()
