@@ -4,8 +4,9 @@ using InteligenceEngine;
 using System;
 using System.Collections.Generic;
 
+
 [Serializable]
-public class PositionTarget : Game
+public class PositionToTargets : Game
 {
     public static new string description = "Move the player to the marked target";
 
@@ -14,21 +15,29 @@ public class PositionTarget : Game
 
     List<(int, int)> playerMoves = new List<(int, int)>();
 
-    (int, int) target;
+    List<(int, int)> targets = new List<(int, int)> ();
 
+    int maxTargets = 3;
 
-    public override int maxpoints => 0;
+    public override int maxPoints => 5;
 
-    public PositionTarget() : base()
+    public PositionToTargets() : base()
     {
+       
+
+        for (int i = 0; i < maxTargets; i++)
+        {
+           targets.Add(GameUtils.GetRandomPosition());
+        }
+
         player = GameUtils.GetRandomPosition();
-        target = GameUtils.GetRandomPosition();
+
     }
 
 
-    public enum Colors
+    public enum TileType
     {
-        empty = 0, player = 1, target = 2, wall = 3,
+        empty = 0, player = 1, target = 2
     }
 
 
@@ -36,14 +45,19 @@ public class PositionTarget : Game
     {
         var board = new GameBoardState(height, width);
 
-        board[player.Item1, player.Item2] = (int)Colors.player;
-        board[target.Item1, target.Item2] = (int)Colors.target;
+        board[player.Item1, player.Item2] = (int)TileType.player;
+
+        foreach (var target in targets)
+        {
+            board[target.Item1, target.Item2] = (int)TileType.target;
+        }
+
 
         return board;
     }
 
 
-    
+
 
     public override int Play(bool[] inputs)
     {
@@ -55,8 +69,21 @@ public class PositionTarget : Game
         player.Item2 = Mathf.Clamp(player.Item2, 0, height - 1);
 
         playerMoves.Add(player);
+        
+        foreach (var target in targets.ToArray())
+        {
+            if (target == player)
+            {
+                points += 1;
 
-        state = player == target ? State.Win : State.Idle;
+                targets.Remove(target);
+
+                if (targets.Count == 0)
+                    state = State.Win;
+
+                return 1;
+            }
+        }
 
         return 0;
     }

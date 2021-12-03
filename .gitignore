@@ -19,7 +19,7 @@ Assets/Specifications/Resources
 
 # python
 python-envs/*
-
+results/*
 
 # file on crash reports
 sysinfo.txt

@@ -36,10 +36,12 @@ public class EngineController : MonoBehaviour
         drawer.DrawBoard(game.GetBoardForDebug(), id);
     }
 
-    public void UpdateGame(bool[] actions)
+    public int UpdateGame(bool[] actions)
     {
-        game.Play(actions);
+        var result = game.Play(actions);
         board = game.GetBoard();
+
+        return result;
     }
 
     public GameBoardState board { get; private set; }

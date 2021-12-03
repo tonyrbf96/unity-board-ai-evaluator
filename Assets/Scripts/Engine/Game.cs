@@ -17,11 +17,11 @@ namespace InteligenceEngine
         /// <summary>
         /// The maximun amount of points recheables on the game design. If -1, them infinite. If 0, then this game is not using point systems.
         /// </summary>
-        public abstract int maxpoints { get; }
+        public abstract int maxPoints { get; }
 
         // This are some constrains used for the trainig and testing engine. All games should use this fixed values.
-        public const int height = 15;
-        public const int width = 15;
+        public const int height = 10;
+        public const int width = 10;
         public const int actions = 4;
 
 

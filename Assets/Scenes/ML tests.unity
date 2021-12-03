@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &148201857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &148201859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &148201860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &256766410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &256766411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -407,7 +407,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
@@ -447,7 +447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &322700015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &322700017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +494,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &322700018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -518,7 +518,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
@@ -641,7 +641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1110606969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,7 +672,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &1110606971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,7 +688,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &1110606972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,7 +702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -712,7 +712,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
@@ -872,9 +872,9 @@ MonoBehaviour:
     id: 0
   - color: {r: 1, g: 0.8304046, b: 0, a: 1}
     id: 1
-  - color: {r: 0.22773254, g: 1, b: 0, a: 1}
+  - color: {r: 1, g: 0.030960465, b: 0, a: 1}
     id: 2
-  - color: {r: 0.1509434, g: 0.080455676, b: 0.08272947, a: 1}
+  - color: {r: 0.15446562, g: 1, b: 0.1462264, a: 1}
     id: 3
   - color: {r: 1, g: 0.9888233, b: 0.8254717, a: 1}
     id: 4
@@ -897,7 +897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1210311641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,7 +928,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &1210311643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,7 +944,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &1210311644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,7 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -968,7 +968,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
@@ -1008,7 +1008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1267177508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &1267177510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,7 +1055,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &1267177511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,7 +1069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -1079,7 +1079,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
@@ -1119,7 +1119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1607549281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,7 +1150,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &1607549283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &1607549284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -1190,7 +1190,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &1622747485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -1284,7 +1284,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
@@ -1307,7 +1307,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &1622747487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,7 +1341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1644734025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &1644734027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,7 +1388,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &1644734028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,7 +1402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -1412,7 +1412,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &1653875945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1499,7 +1499,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &1653875946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1513,7 +1513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -1523,7 +1523,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
@@ -1563,7 +1563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1663023754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,7 +1594,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &1663023756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &1663023757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1624,7 +1624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -1634,7 +1634,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
@@ -1704,7 +1704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1912025369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1735,7 +1735,7 @@ MonoBehaviour:
   width: 10
   height: 10
   enableRendering: 1
-  gameName: PositionTarget
+  gameName: Snake
 --- !u!114 &1912025371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1751,7 +1751,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30
+  MaxStep: 300
 --- !u!114 &1912025372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1765,7 +1765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 100
+    VectorObservationSize: 225
     NumStackedVectorObservations: 10
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -1775,7 +1775,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 3
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SmartAgent
   TeamId: 0
