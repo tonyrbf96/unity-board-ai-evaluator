@@ -6,8 +6,8 @@ using System;
 
 public class HeuristicPlayer : MonoBehaviour
 {
-    [Range(0.001f,0.3f)]
-    public float deltaTime;
+    GameController controller;
+
     readonly Dictionary<KeyCode, int> keys = new Dictionary<KeyCode, int>() {
         { KeyCode.LeftArrow, 3 },
         { KeyCode.RightArrow, 1 },
@@ -15,32 +15,54 @@ public class HeuristicPlayer : MonoBehaviour
         { KeyCode.DownArrow, 2 },
     };
 
+    int wins, loses;
 
-    public void Play(Action<bool[]> callback)
+    void Awake()
     {
-        StartCoroutine(InputEnumerator(callback));
+        controller = GetComponent<GameController>();
     }
 
-    IEnumerator InputEnumerator(Action<bool[]> callback)
+    void Start()
     {
-        bool[] inputs = new bool[keys.Count];
+        controller.RestartGame();
+        controller.DrawGame();
+    }
 
-        var delta = 0f;
-        while (delta < deltaTime)
+    void Update()
+    {
+        var inputs = new bool[Game.actions];
+
+        foreach (var key in keys.Keys)
         {
-            yield return null;
-            foreach (var key in keys)
+            if (Input.GetKeyDown(key))
             {
-                if (Input.GetKeyDown(key.Key))
-                    inputs[key.Value] = Input.GetKeyDown(key.Key);
-            }
+                inputs[keys[key]] = true;
 
-            delta += Time.deltaTime;
+                controller.UpdateGame(inputs);
+                controller.DrawGame();
+                break;
+
+            }
         }
 
-
-        callback?.Invoke(inputs);
-
+        switch (controller.state)
+        {
+            case Game.State.Idle:
+                break;
+            case Game.State.Win:
+                Start();
+                wins++;
+                Debug.Log($"Win {wins}! Points: {controller.points}", this);
+                break;
+            case Game.State.Lose:
+                Start();
+                loses++;
+                Debug.Log($"Lose {loses}! Points: {controller.points}", this);
+                break;
+        }
 
     }
+
+
+
 }

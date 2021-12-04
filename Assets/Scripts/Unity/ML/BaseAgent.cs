@@ -25,7 +25,6 @@ public abstract class BaseAgent : Agent
     public override void OnEpisodeBegin()
     {
         controller.RestartGame();
-
         controller.DrawGame();
     }
 

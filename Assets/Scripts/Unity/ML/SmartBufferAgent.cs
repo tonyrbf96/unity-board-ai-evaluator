@@ -14,7 +14,6 @@ public class SmartBufferAgent : BaseAgent
     BehaviorParameters behaviour;
 
 
-
     private void Awake()
     {
         behaviour = GetComponent<BehaviorParameters>();

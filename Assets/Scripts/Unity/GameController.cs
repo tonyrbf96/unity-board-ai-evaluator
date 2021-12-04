@@ -14,6 +14,8 @@ public sealed class GameController : MonoBehaviour
     [GameTypeDrowdown]
     public string gameName;
 
+    public int lastTotalPoints;
+    public int lastPoints;
 
     private void Awake()
     {
@@ -30,10 +32,12 @@ public sealed class GameController : MonoBehaviour
     {
         if (!enableRendering) return;
         var board = game.GetBoardForDebug();
-        drawer.DrawBoard(board, id);
+
+        if(drawer)
+            drawer.DrawBoard(board, id);
     }
 
-    public int lastPoints;
+
     public void UpdateGame(bool[] actions)
     {
         Debug.Assert(state == Game.State.Idle, $"The game is already finished, please call {nameof(GameController)}.{nameof(RestartGame)} before continue.", this);
@@ -41,9 +45,8 @@ public sealed class GameController : MonoBehaviour
 
 
         game.Play(actions);
-
-        lastPoints = game.points - lastPoints;
-
+        lastPoints = game.points - lastTotalPoints;
+        lastTotalPoints = game.points;
         board = game.GetBoard();
     }
 

@@ -21,8 +21,6 @@ public class Snake : Game
 
     public Snake() : base()
     {
-
-
         for (int i = 0; i < maxTargets; i++)
         {
             targets.Add(GameUtils.GetRandomPosition());
